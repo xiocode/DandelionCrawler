@@ -15,6 +15,7 @@ class AutoTokenGenerator(object):
         '''
         Auto Generator a valid token for different site platform.
         '''
+
     
     def __getValidToken(self):
         '''
