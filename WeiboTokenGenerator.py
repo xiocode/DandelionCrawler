@@ -7,7 +7,6 @@ import json
 import hashlib
 import requests
 import urllib
-
 postdata = {
     'entry': 'weibo',
     'gateway': '1',
@@ -101,4 +100,5 @@ def loginAndGetToken(username,pwd):
         print access_token
         return access_token
     except:
+
         return 0
