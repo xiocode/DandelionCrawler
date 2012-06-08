@@ -53,7 +53,8 @@ class AutoTokenGenerator(object):
         tokens=[]
         for account_info in result:
             access_token = WeiboTokenGenerator.loginAndGetToken(account_info["username"],account_info["password"])
-            self.db.update("UPDATE access_token = '" + access_token + "' WHERE uid=" + account_info["uid"])
+            print "Access_Token: " +  access_token
+            self.db.update("UPDATE tb_account_info SET  access_token = '" + access_token + "', is_valid=1 WHERE uid=" + str(account_info["uid"]))
             tokens.append(access_token)
         return tokens
 

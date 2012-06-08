@@ -100,5 +100,5 @@ def loginAndGetToken(username,pwd):
         print access_token
         return access_token
     except:
-
-        return 0
+        return "0"
+#loginAndGetToken("xeoncode@gmail.com","5845211314")

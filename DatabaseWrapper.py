@@ -9,7 +9,7 @@ import Logger
 class Database(object):
 
     def __init__(self):
-        self.db =  MySQLdb.connect(host='127.0.0.1', user='root', passwd='root', db='dandelion_crawler', charset='utf8')
+        self.db =  MySQLdb.connect(host='127.0.0.1', user='root', passwd='299792458', db='dandelion_crawler', charset='utf8')
         self.logger = Logger.getLogger("Database")
 
     def query(self,sql):
@@ -21,7 +21,7 @@ class Database(object):
         counts = cursor.execute(sql)
         for row in cursor.fetchall():
             result.append(row)
-        self.logger.info("共返回数据 " + counts + " 条")
+        self.logger.info("共返回数据 " + str(counts) + " 条")
         cursor.close()
         return result
 
