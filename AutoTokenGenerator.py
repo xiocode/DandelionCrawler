@@ -3,12 +3,13 @@
 '''
 Created on 2012-6-4
 
-@author: windows
+@author: Tony.Shao
 '''
 
 import logging
 from DatabaseWrapper import Database
 import WeiboTokenGenerator
+import Logger
 
 class AutoTokenGenerator(object):
     
@@ -17,6 +18,7 @@ class AutoTokenGenerator(object):
         Constructor
         '''
         self.db = Database()
+        self.logger = Logger.getLogger("AutoTokenGenerator")
     
     def generatorToken(self, site_id):
         '''
@@ -26,7 +28,7 @@ class AutoTokenGenerator(object):
         if len(tokens) > 0:
             return tokens[0]
         else:
-            tokens = __generatorValidToken(site_id)
+            tokens = self.__generatorValidToken(site_id)
             if len(tokens) > 0:
                 return tokens[0]
 
@@ -34,6 +36,9 @@ class AutoTokenGenerator(object):
         '''
         get a valid token from database.
         '''
+        if self.db is None:
+            self.logger.error("数据库创建链接失败")
+            return -1
         result = self.db.query("SELECT access_token FROM tb_account_info WHERE platform_id = " + str(site_id) + " AND is_valid=1 AND rate_limited=0 ORDER BY assign_counter ASC " )
         return result
 
@@ -41,6 +46,9 @@ class AutoTokenGenerator(object):
         '''
         update a invalid token
         '''
+        if self.db is None:
+            self.logger.error("数据库创建链接失败")
+            return -1
         result = self.db.query("SELECT uid,username,password FROM tb_account_info WHERE platform_id = " + str(site_id) + " AND is_valid=0  ORDER BY assign_counter ASC")
         tokens=[]
         for account_info in result:

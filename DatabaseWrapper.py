@@ -4,27 +4,34 @@ __author__ = 'Tony.Shao'
 
 import sys
 import MySQLdb
+import Logger
 
 class Database(object):
 
     def __init__(self):
         self.db =  MySQLdb.connect(host='127.0.0.1', user='root', passwd='root', db='dandelion_crawler', charset='utf8')
-        self.cursor = self.db.cursor(MySQLdb.cursors.DictCursor)
+        self.logger = Logger.getLogger("Database")
 
     def query(self,sql):
-        self.cursor.execute(sql)
         result = []
-        for row in self.cursor.fetchall():
+        if self.db is None:
+            self.logger.error("数据库链接失败！")
+            return result
+        cursor = self.db.cursor(MySQLdb.cursors.DictCursor)
+        counts = cursor.execute(sql)
+        for row in cursor.fetchall():
             result.append(row)
+        self.logger.info("共返回数据 " + counts + " 条")
+        cursor.close()
         return result
 
     def update(self,sql):
-        cursor = self.db.cursor()
+        if self.db is None:
+            self.logger.error("数据库链接失败！")
+        cursor = self.db.cursor(MySQLdb.cursors.DictCursor)
         result = cursor.execute(sql)
+        cursor.close()
         print result
-
-    def close(self):
-        self.cursor.close()
 
 if __name__ == '__main__':
     dbUtil = Database()

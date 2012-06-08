@@ -25,7 +25,25 @@
       <file leaf-file-name="WeiboTokenGenerator.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/WeiboTokenGenerator.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="104" column="0" selection-start="3061" selection-end="3061" vertical-scroll-proportion="-35.24">
+            <state line="96" column="19" selection-start="2671" selection-end="2671" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="weibo.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/weibo.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="9" column="0" selection-start="180" selection-end="180" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CrawlerDemo.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CrawlerDemo.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="4" column="49" selection-start="117" selection-end="117" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -34,9 +52,9 @@
       <file leaf-file-name="AutoTokenGenerator.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/AutoTokenGenerator.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="3" selection-start="45" selection-end="45" vertical-scroll-proportion="0.070853464">
+            <state line="26" column="46" selection-start="562" selection-end="562" vertical-scroll-proportion="1.3619047">
               <folding>
-                <element signature="e#89#103#0" expanded="true" />
+                <element signature="e#91#105#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -45,7 +63,7 @@
       <file leaf-file-name="DatabaseWrapper.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/DatabaseWrapper.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="73" selection-start="217" selection-end="217" vertical-scroll-proportion="0.0">
+            <state line="15" column="19" selection-start="375" selection-end="375" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="e#68#78#0" expanded="true" />
               </folding>
@@ -53,50 +71,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="connections.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://D:/Python26/Lib/site-packages/MySQLdb/connections.py">
+      <file leaf-file-name="Logger.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Logger.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="55" column="0" selection-start="1432" selection-end="1432" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="e#281#295#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="__init__.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://D:/Python26/Lib/encodings/__init__.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="99" column="0" selection-start="3766" selection-end="3766" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="utf_8.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://D:/Python26/Lib/encodings/utf_8.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="0" selection-start="132" selection-end="132" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="cursors.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://D:/Python26/Lib/site-packages/MySQLdb/cursors.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="497" column="0" selection-start="16497" selection-end="16497" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="e#130#139#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="re.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://D:/Python26/Lib/re.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="189" column="0" selection-start="8942" selection-end="8942" vertical-scroll-proportion="0.0">
+            <state line="14" column="87" selection-start="437" selection-end="437" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -113,10 +91,11 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/DatabaseUtil.py" />
-        <option value="$PROJECT_DIR$/Logger.py" />
         <option value="D:/Python26/Lib/site-packages/MySQLdb/__init__.py" />
-        <option value="$PROJECT_DIR$/DatabaseWrapper.py" />
         <option value="$PROJECT_DIR$/WeiboTokenGenerator.py" />
+        <option value="$PROJECT_DIR$/DatabaseWrapper.py" />
+        <option value="$PROJECT_DIR$/CrawlerDemo.py" />
+        <option value="$PROJECT_DIR$/Logger.py" />
         <option value="$PROJECT_DIR$/AutoTokenGenerator.py" />
       </list>
     </option>
@@ -153,6 +132,16 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -173,18 +162,15 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope">
-        <subPane subId="Project Files" />
-      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="options.lastSelected" value="fileTemplates" />
     <property name="recentsLimit" value="5" />
-    <property name="options.searchVisible" value="true" />
+    <property name="options.lastSelected" value="fileTemplates" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -194,7 +180,7 @@
       <PyConsoleSettings />
     </option>
   </component>
-  <component name="RunManager" selected="Python.WeiboTokenGenerator">
+  <component name="RunManager" selected="Python.AutoTokenGenerator">
     <configuration default="false" name="DatabaseWrapper" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -338,18 +324,18 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-4" y="-4" width="1448" height="830" extended-state="7" />
+    <frame x="-4" y="-4" width="1448" height="830" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25322813" sideWeight="0.67107195" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39941263" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25322813" sideWeight="0.6740088" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39941263" sideWeight="0.49426112" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32599118" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32599118" sideWeight="0.50071734" order="9" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32599118" sideWeight="0.49713057" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -420,19 +406,19 @@
         <state line="10" column="3" selection-start="67" selection-end="67" vertical-scroll-proportion="0.29007635" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/weibo.py">
+    <entry file="file://D:/Python26/Lib/site-packages/MySQLdb/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="50" selection-start="81" selection-end="118" vertical-scroll-proportion="0.13707165" />
+        <state line="79" column="0" selection-start="2329" selection-end="2368" vertical-scroll-proportion="0.29466358" />
       </provider>
     </entry>
-    <entry file="file://D:/Python26/Lib/encodings/__init__.py">
+    <entry file="file://D:/Python26/Lib/site-packages/MySQLdb/connections.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="99" column="0" selection-start="3766" selection-end="3766" vertical-scroll-proportion="0.0" />
+        <state line="55" column="0" selection-start="1432" selection-end="1432" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://D:/Python26/Lib/encodings/utf_8.py">
+    <entry file="file://D:/Python26/Lib/site-packages/MySQLdb/cursors.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="0" selection-start="132" selection-end="132" vertical-scroll-proportion="0.0" />
+        <state line="497" column="0" selection-start="16497" selection-end="16497" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://D:/Python26/Lib/re.py">
@@ -440,59 +426,62 @@
         <state line="189" column="0" selection-start="8942" selection-end="8942" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Logger.py">
+    <entry file="file://$PROJECT_DIR$/WeiboTokenGenerator.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="12" selection-start="203" selection-end="207" vertical-scroll-proportion="0.38170347">
+        <state line="96" column="19" selection-start="2671" selection-end="2671" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://D:/Python26/Lib/site-packages/MySQLdb/cursors.py">
+    <entry file="file://$PROJECT_DIR$/weibo.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="497" column="0" selection-start="16497" selection-end="16497" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#130#139#0" expanded="true" />
-          </folding>
+        <state line="9" column="0" selection-start="180" selection-end="180" vertical-scroll-proportion="0.0">
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://D:/Python26/Lib/site-packages/MySQLdb/connections.py">
+    <entry file="file://$PROJECT_DIR$/CrawlerDemo.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="55" column="0" selection-start="1432" selection-end="1432" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#281#295#0" expanded="true" />
-          </folding>
+        <state line="4" column="49" selection-start="117" selection-end="117" vertical-scroll-proportion="0.0">
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://D:/Python26/Lib/site-packages/MySQLdb/__init__.py">
+    <entry file="file://D:/Python26/Lib/encodings/utf_8.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="79" column="0" selection-start="2329" selection-end="2368" vertical-scroll-proportion="0.29466358">
+        <state line="7" column="0" selection-start="132" selection-end="132" vertical-scroll-proportion="0.053398058">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/Python26/Lib/encodings/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="99" column="0" selection-start="3766" selection-end="3766" vertical-scroll-proportion="0.053398058">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/DatabaseWrapper.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="73" selection-start="217" selection-end="217" vertical-scroll-proportion="0.0">
+        <state line="15" column="19" selection-start="375" selection-end="375" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="e#68#78#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/WeiboTokenGenerator.py">
+    <entry file="file://$PROJECT_DIR$/Logger.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="104" column="0" selection-start="3061" selection-end="3061" vertical-scroll-proportion="-35.24">
+        <state line="14" column="87" selection-start="437" selection-end="437" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/AutoTokenGenerator.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="3" selection-start="45" selection-end="45" vertical-scroll-proportion="0.070853464">
+        <state line="26" column="46" selection-start="562" selection-end="562" vertical-scroll-proportion="1.3619047">
           <folding>
-            <element signature="e#89#103#0" expanded="true" />
+            <element signature="e#91#105#0" expanded="true" />
           </folding>
         </state>
       </provider>
