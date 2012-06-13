@@ -71,8 +71,9 @@ def loginAndGetToken(username,pwd):
     url = 'http://login.sina.com.cn/sso/login.php?client=ssologin.js(v1.3.22)'
     try:
         servertime, nonce = __get_servertime()
-    except:
-        return
+    except Exception, e:
+        print e
+        return None
     global postdata
     postdata['servertime'] = servertime
     postdata['nonce'] = nonce
@@ -91,14 +92,24 @@ def loginAndGetToken(username,pwd):
     p = re.compile('location\.replace\(\'(.*?)\'\)')
     try:
         login_url = p.search(text).group(1)
-#        print login_url
+        print login_url
         response = session.get(login_url)
-        response = session.get("https://api.weibo.com/oauth2/authorize?client_id=3231340587&redirect_uri=http://2.xweiboproxy.sinaapp.com%2Fcallback.php&response_type=code", allow_redirects=True)
+        response = session.get("https://api.weibo.com/oauth2/authorize?client_id=3231340587&redirect_uri=http://120.weibomanager.sinaapp.com/callback.php&response_type=code", allow_redirects=True)
 #        print response.status_code
         data = json.loads(response.content)
         access_token = str(data['access_token'])
         print access_token
         return access_token
-    except:
-        return "0"
-#loginAndGetToken("xeoncode@gmail.com","5845211314")
+    except Exception:
+        raise WeiboError("-3","获取Token失败！")
+        return None
+class WeiboError(StandardError):
+    def __init__(self, error_code, error):
+        self.error_code = error_code
+        self.error = error
+        StandardError.__init__(self, error)
+
+    def __str__(self):
+        return 'TokenGeneratorError: ErrorCode: %s, ErrorContent: %s' % (self.error_code, self.error)
+
+loginAndGetToken("xeoncode@gmail.com", "5845211314")

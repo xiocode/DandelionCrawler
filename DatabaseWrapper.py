@@ -15,6 +15,7 @@ class Database(object):
     def query(self,sql):
         result = []
         if self.db is None:
+            raise DatabaseError("-2", "数据库链接创建异常！")
             self.logger.error("数据库链接失败！")
             return result
         cursor = self.db.cursor(MySQLdb.cursors.DictCursor)
@@ -27,11 +28,21 @@ class Database(object):
 
     def update(self,sql):
         if self.db is None:
+            raise DatabaseError("-2", "数据库链接创建异常！")
             self.logger.error("数据库链接失败！")
         cursor = self.db.cursor(MySQLdb.cursors.DictCursor)
         result = cursor.execute(sql)
         cursor.close()
         print result
+
+class DatabaseError(StandardError):
+    def __init__(self, error_code, error):
+        self.error_code = error_code
+        self.error = error
+        StandardError.__init__(self, error)
+
+    def __str__(self):
+        return 'TokenGeneratorError: ErrorCode: %s, ErrorContent: %s' % (self.error_code, self.error)
 
 if __name__ == '__main__':
     dbUtil = Database()
