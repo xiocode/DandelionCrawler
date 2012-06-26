@@ -119,6 +119,7 @@ def _http_call(url, method, authorization, **kw):
     http_url = '%s?%s' % (url, params) if method==_HTTP_GET else url
     http_body = None if method==_HTTP_GET else params
     req = urllib2.Request(http_url, data=http_body)
+    print http_url
     if authorization:
         req.add_header('Authorization', 'OAuth2 %s' % authorization)
     if boundary:
@@ -138,8 +139,8 @@ class HttpObject(object):
 
     def __getattr__(self, attr):
         def wrap(**kw):
-            if self.client.is_expires():
-                raise APIError('21327', 'expired_token', attr)
+#            if self.client.is_expires():
+#                raise APIError('21327', 'expired_token', attr)
             return _http_call('%s%s.json' % (self.client.api_url, attr.replace('__', '/')), self.method, self.client.access_token, **kw)
         return wrap
 
@@ -164,33 +165,33 @@ class APIClient(object):
         self.access_token = str(access_token)
         self.expires = float(expires_in)
 
-    def get_authorize_url(self, redirect_uri=None, display='default'):
-        '''
-        return the authroize url that should be redirect.
-        '''
-        redirect = redirect_uri if redirect_uri else self.redirect_uri
-        if not redirect:
-            raise APIError('21305', 'Parameter absent: redirect_uri', 'OAuth2 request')
-        return '%s%s?%s' % (self.auth_url, 'authorize', \
-                _encode_params(client_id = self.client_id, \
-                        response_type = 'code', \
-                        display = display, \
-                        redirect_uri = redirect))
+#    def get_authorize_url(self, redirect_uri=None, display='default'):
+#        '''
+#        return the authroize url that should be redirect.
+#        '''
+#        redirect = redirect_uri if redirect_uri else self.redirect_uri
+#        if not redirect:
+#            raise APIError('21305', 'Parameter absent: redirect_uri', 'OAuth2 request')
+#        return '%s%s?%s' % (self.auth_url, 'authorize', \
+#                _encode_params(client_id = self.client_id, \
+#                        response_type = 'code', \
+#                        display = display, \
+#                        redirect_uri = redirect))
 
-    def request_access_token(self, code, redirect_uri=None):
-        '''
-        return access token as object: {"access_token":"your-access-token","expires_in":12345678}, expires_in is standard unix-epoch-time
-        '''
-        redirect = redirect_uri if redirect_uri else self.redirect_uri
-        if not redirect:
-            raise APIError('21305', 'Parameter absent: redirect_uri', 'OAuth2 request')
-        r = _http_post('%s%s' % (self.auth_url, 'access_token'), \
-                client_id = self.client_id, \
-                client_secret = self.client_secret, \
-                redirect_uri = redirect, \
-                code = code, grant_type = 'authorization_code')
-        r.expires_in += int(time.time())
-        return r
+#    def request_access_token(self, code, redirect_uri=None):
+#        '''
+#        return access token as object: {"access_token":"your-access-token","expires_in":12345678}, expires_in is standard unix-epoch-time
+#        '''
+#        redirect = redirect_uri if redirect_uri else self.redirect_uri
+#        if not redirect:
+#            raise APIError('21305', 'Parameter absent: redirect_uri', 'OAuth2 request')
+#        r = _http_post('%s%s' % (self.auth_url, 'access_token'), \
+#                client_id = self.client_id, \
+#                client_secret = self.client_secret, \
+#                redirect_uri = redirect, \
+#                code = code, grant_type = 'authorization_code')
+#        r.expires_in += int(time.time())
+#        return r
 
     def is_expires(self):
         return not self.access_token or time.time() > self.expires

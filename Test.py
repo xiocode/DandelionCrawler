@@ -3,12 +3,6 @@ Created on 2012-6-4
 
 @author: windows
 '''
-import time
+reason = "reason=%B5%C7%C2%BC%C3%FB%BB%F2%C3%DC%C2%EB%B4%ED%CE%F3"
 
-startTime = time.time()
-result = 0
-for i in xrange(1000000):
-    result = i + i - i * i / (i + 1);
-endTime = time.time()
-print result
-print (endTime - startTime)
+print reason.decode("gbk")

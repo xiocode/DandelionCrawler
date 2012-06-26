@@ -66,7 +66,7 @@ def __get_user(username):
 
 
 def loginAndGetToken(username,pwd):
-    
+
     session = requests.session()
     url = 'http://login.sina.com.cn/sso/login.php?client=ssologin.js(v1.3.22)'
     try:
@@ -79,11 +79,11 @@ def loginAndGetToken(username,pwd):
     postdata['nonce'] = nonce
     postdata['su'] = __get_user(username)
     postdata['sp'] = __get_pwd(pwd, servertime, nonce)
-    postdata = urllib.urlencode(postdata)
+    postdata_params = urllib.urlencode(postdata)
     headers = {'User-Agent':'Mozilla/5.0 (X11; Linux i686; rv:8.0) Gecko/20100101 Firefox/8.0'}
     result = session.post(
         url = url,
-        data = postdata,
+        data = postdata_params,
         headers = headers
     )
     text = result.content
@@ -98,8 +98,9 @@ def loginAndGetToken(username,pwd):
 #        print response.status_code
         data = json.loads(response.content)
         access_token = str(data['access_token'])
-        print access_token
-        return access_token
+        expires_in = str(data['expires_in'])
+        print access_token,expires_in
+        return access_token,expires_in
     except Exception:
         raise WeiboError("-3","获取Token失败！")
         return None
@@ -112,4 +113,7 @@ class WeiboError(StandardError):
     def __str__(self):
         return 'TokenGeneratorError: ErrorCode: %s, ErrorContent: %s' % (self.error_code, self.error)
 
-loginAndGetToken("xeoncode@gmail.com", "5845211314")
+#users = [["xeoncode@gmail.com","5845211314"],["azure.i.dancer@gmail.com","5845211314"]]
+#for username,password in users:
+#    print username,password
+#    loginAndGetToken(username, password)

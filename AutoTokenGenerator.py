@@ -8,6 +8,7 @@ Created on 2012-6-4
 
 import logging
 from DatabaseWrapper import Database
+import WeiboTokenGenerator
 import Logger
 
 class AutoTokenGenerator(object):
@@ -23,7 +24,8 @@ class AutoTokenGenerator(object):
         '''
         Auto Generator a valid token for different site platform.
         '''
-        tokens = self.__getValidToken(site_id)
+#        tokens = self.__getValidToken(site_id)
+        tokens = None
         if tokens != None and  len(tokens) > 0:
             return tokens[0]
         else:
@@ -43,7 +45,11 @@ class AutoTokenGenerator(object):
             raise TokenGeneratorError("0", "数据库创建链接失败")
 #            self.logger.error("数据库创建链接失败")
             return None
-        result = self.db.query("SELECT access_token FROM tb_account_info WHERE platform_id = " + str(site_id) + " AND is_valid=1 AND rate_limited=0 ORDER BY assign_counter ASC " )
+        tokens=[]
+        result = self.db.query("SELECT access_token,expires_in FROM tb_account_info WHERE platform_id = " + str(site_id) + " AND is_valid=1 AND rate_limited=0 ORDER BY assign_counter ASC " )
+        for token_info in result:
+            token = dict([("access_token",token_info["access_token"]),("expires_in",token_info["expires_in"])])
+            tokens.append(token)
         return result
 
     def __generatorValidToken(self,site_id):
@@ -57,9 +63,10 @@ class AutoTokenGenerator(object):
         result = self.db.query("SELECT uid,username,password FROM tb_account_info WHERE platform_id = " + str(site_id) + " AND is_valid=0  ORDER BY assign_counter ASC")
         tokens=[]
         for account_info in result:
-            access_token = WeiboTokenGenerator.loginAndGetToken(account_info["username"],account_info["password"])
-            self.db.update("UPDATE access_token = '" + access_token + "' WHERE uid=" + account_info["uid"])
-            tokens.append(access_token)
+            access_token,expires_in = WeiboTokenGenerator.loginAndGetToken(account_info["username"],account_info["password"])
+            self.db.update("UPDATE access_token = '" + access_token + "',expires_in='" + expires_in + "' WHERE uid=" + account_info["uid"])
+            token = dict([("access_token",access_token),("expires_in",expires_in)])
+            tokens.append(token)
         return tokens
 
 class TokenGeneratorError(StandardError):
@@ -72,7 +79,6 @@ class TokenGeneratorError(StandardError):
         return 'TokenGeneratorError: ErrorCode: %s, ErrorContent: %s' % (self.error_code, self.error)
 
 
-if __name__ == "__main__":
-    tokenGenerator = AutoTokenGenerator()
-    token = tokenGenerator.generatorToken(1)
-    print token
+#if __name__ == "__main__":
+#    tokenGenerator = AutoTokenGenerator()
+#    tokenGenerator.generatorToken(1)
